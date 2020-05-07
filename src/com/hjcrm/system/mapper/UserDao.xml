@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.UserDao">
+	<!--根据邮箱查询用户互信息-->
+	<select id="queryUserInfoByEmail"  resultType="user">
+		select userid,username,roleid from hj_user where email=#{value}
+	</select>
+	<!--查询密码是否匹配-->
+	<select id="queryPasswordIsExis" parameterType="user"   resultType="user">
+		select userid from hj_user where userid=#{userid} and password=#{password}
+	</select>
+	<!--实现用户信息的查询（分页）-->
+	<select id="queryAllUserInfo" parameterType="com.hjcrm.system.DBHelper.util.PageBean"   resultType="user">
+		select hj_user.* from hj_user
+		left join hj_dept on
+		hj_user.deptid=hj_dept.deptid
+		limit #{currentPage}, #{pageSize};
+	</select>
+
+	<!--查询用户条数-->
+	<select id="queryAllUserCount" resultType="int">
+		select count(*) from hj_user
+	</select>
+
+	<!--添加用户-->
+	<insert id="addUserInfo" parameterType="user" >
+		insert into hj_user(username,password,email,phone,mobile,sex,deptid,roleid,deptgroup,state,note)
+		values(
+		#{username},md5(123123),#{email},#{phone},#{mobile},#{sex},#{deptid},
+		#{roleid},#{deptgroup},#{state},#{note});
+	</insert>
+	<!--修改用户-->
+	<update id="updateUserInfo" parameterType="user" >
+		update hj_user set username=#{username},password=md5(#{password}),
+		email=#{email},phone=#{phone},
+		mobile=#{mobile},sex=#{sex}
+		,deptid=#{deptid},roleid=#{roleid},
+		deptgroup=#{deptgroup},
+		state=#{state},<if test="note!=null and note !=''">note=#{note}</if>
+		where userid=#{userid}
+	</update>
+
+
+	<!--删除用户-->
+	<delete id="deleteUserByIds" parameterType="java.util.List" >
+		delete from hj_user where userid in 
+		<foreach collection="list" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+	<!--修改旧密码-->
+	<update id="editPassword" parameterType="java.util.Map">
+		update hj_user set password=#{newPassword} where userid=#{userid} and password=#{oldPassword}
+	</update>
+</mapper>

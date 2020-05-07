@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.RoleDao">
+	<!--根据部门编号查询角色-->
+	<select id="queryRoleByDeptId"   parameterType="string"  resultType="role">
+		select  r.roleid,r.rolename,r.deptid from hj_role r
+		where r.deptid=#{deptId};
+	</select>
+
+	<!--查询所有角色信息-->
+	<select id="queryAllRole"   parameterType="com.hjcrm.system.DBHelper.util.PageBean"  resultType="role">
+		select r.roleid,r.rolename, d.deptname,
+		group_concat(m.menuname separator ',' ) menuname
+		from hj_role r left join hj_role_menu  rm on r.roleid=rm.roleid
+		left join hj_menu m on m.menuid=rm.menuid
+		left join hj_dept d on r.deptid=d.deptid
+		group by r.roleid limit #{currentPage},#{pageSize}
+	</select>
+	<select id="queryRoleCount" resultType="int">
+		select count(*) from hj_role;
+	</select>
+
+	<!--添加角色-->
+	<insert id="addRole" parameterType="role">
+		insert into hj_role
+		(rolename,deptid,dr,create_time,create_id,update_time,update_id)
+		values(
+		#{rolename},#{deptid},#{dr},#{create_time},#{create_id},#{update_time},#{update_id}
+		)
+	</insert>
+	<!--修改角色-->
+	<update id="updateRole" parameterType="role">
+		update hj_role set deptid=#{deptid},rolename=#{rolename} where roleid=#{roleid}
+	</update>
+	<!--修改角色-->
+	<delete id="deleteRole" parameterType="java.util.List">
+		delete from hj_role where roleid in
+		<foreach collection="list" item="id" open="(" separator="," close=")">
+			  #{id}
+		</foreach>
+	</delete>
+
+
+	<!--删除用户所有功能菜单-->
+	<delete id="deleteRoleAndMenuByRoleId" parameterType="string">
+		delete from hj_role_menu where roleid=#{roled}
+	</delete>
+	<!--添加用户功能菜单-->
+	<insert id="addRoleAndMenu"  parameterType="role_menu">
+		insert into hj_role_menu(roleid,menuid) value (#{roleid},#{menuid})
+	</insert>
+
+
+
+
+</mapper>

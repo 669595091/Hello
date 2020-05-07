@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.DeptDao">
+	<!--查询所有部门-->
+	<select id="queryAllDept" resultType="dept">
+		select  d.deptid,d.deptname,d.deptparaid from hj_dept d;
+	</select>
+	<!--分页查询所有部门-->
+	<select id="queryAllDeptPage" parameterType="com.hjcrm.system.DBHelper.util.PageBean" resultType="dept">
+		select c.deptid,c.deptname,c.deptcode,d.deptname as deptparaname
+		from hj_dept d
+		join hj_dept c on c.deptparaid=d.deptid
+		limit #{currentPage},#{pageSize}
+	</select>
+	<!--查询所有部门个数-->
+	<select id="queryDeptCount" resultType="int">
+		select count(*) from hj_dept
+	</select>
+	<!--添加部门-->
+	<insert id="addDept" parameterType="dept">
+		insert into hj_dept
+		(deptid,deptparaid,deptname,deptcode,dr,create_time,create_id,update_time,update_id)
+		values(
+		#{deptid},#{deptparaid},#{deptname},#{deptcode},#{dr},#{create_time},#{create_id},#{update_time},#{update_id}
+		);
+	</insert>
+
+	<!--修改部门-->
+	<update id="updateDept" parameterType="dept">
+		update hj_dept set
+		deptparaid=#{deptparaid},deptcode=#{deptcode},deptname=#{deptname}
+		where deptid=#{deptid}
+	</update>
+
+	<!--删除部门-->
+	<delete id="deleteDept" parameterType="java.util.List">
+		delete from hj_dept where deptid in
+		<foreach collection="list" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+</mapper>

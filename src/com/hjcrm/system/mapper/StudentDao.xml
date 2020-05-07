@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.StudentDao">
+
+	<!--查询销售学生-->
+	<select id="querySalesStudents" parameterType="com.hjcrm.system.DBHelper.util.PageBean" resultType="student">
+		select * from hj_student
+		<if test="currentPage !=null and currentPage!=0">
+			limit #{currentPage},#{pageSize}
+		</if>
+	</select>
+	<!--查询行政部学员   -->
+	<select id="queryAdminStudents" parameterType="com.hjcrm.system.DBHelper.util.PageBean" resultType="student">
+		select * from hj_student where studentstate!=8 or studentstate>0
+		<if test="currentPage !=null and currentPage!=0">
+			limit #{currentPage},#{pageSize}
+		</if>
+	</select>
+	<!--计数学生-->
+	<select id="queryStudentCount" resultType="int">
+		select count(*) from hj_student
+	</select>
+	<!--添加学生-->
+	<insert id="addStudent" parameterType="student">
+		insert into hj_student(
+        userid,resourceId,belongid,studentName,phone,idCard,school,education,email,company,companyAddr,companyTel,department,position,source
+        )
+        values(
+        #{userid},#{resourceId},#{belongid},#{studentName},#{phone},#{idCard},#{school},#{education},#{email},#{company},#{companyAddr},#{companyTel},#{department},#{position},#{source}
+        )
+	</insert>
+	<!--修改学生-->
+	<update id="updateStudent" parameterType="student">
+		update hj_student set userid=#{userid},studentName=#{studentName},idCard=#{idCard},school=#{school},education=#{education},LCWname=#{LCWname},
+		LCWpassword=#{LCWpassword},email=#{email},company=#{company},position=#{position},companyTel=#{companyTel},tel=#{tel},weixin=#{weixin},qq=#{qq},
+		address=#{address},banci=#{banci},companyAddr=#{companyAddr},department=#{department},isjieye=#{isjieye}
+		where studentId=#{studentId}
+	</update>
+	<!--学生提交-->
+	<update id="studentCommit" parameterType="java.util.List">
+		update hj_student set studentstate=2
+		where studentId in
+		<foreach collection="list" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</update>
+	<!--查询学生详情-->
+	<select id="queryStudentDetails" parameterType="student" resultType="student">
+		select * from hj_student
+		where studentId=#{studentId}
+	</select>
+</mapper>

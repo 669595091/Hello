@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.ResourceDao">
+    <!--查询运营资源管理-->
+    <select id="queryResource" parameterType="java.util.Map" resultType="resource">
+        select resourceId,hj_resource.userid,hj_resource.create_time,hj_resource.state,isZhuanyi,createrName,
+        source,address,resourceName,hj_resource.phone,hj_course.courseName as courseName,hj_user.username belongName,yunYingNote,firstVisitTime,nextVisitTime
+        from hj_resource
+        left join hj_course
+        on hj_resource.courseid=hj_course.courseid
+        left join hj_user on
+        hj_resource.belongid=hj_user.userid
+        where 1=1
+        <if test="userId !=null and userId!=0">
+            and hj_resource.userid=#{userId}
+        </if>
+
+        <if test="belongId!=null and belongId!=0">
+            and hj_resource.belongid=#{belongId}
+        </if>
+        limit #{currentPage},#{pageSize}
+	</select>
+    <!--查询销售资源管理-->
+    <select id="querySalesResource" parameterType="java.util.Map" resultType="resource">
+        select hj_resource.resourceId,assignTime,hj_resource.state,hj_resource.isZhuanyi,resourceLevel,firstVisitTime,v.create_time nearVisitTime,
+        nextVisitTime,source,address,resourceName,phone,hj_course.courseName courseName,yunYingNote,xiaoShouNote,v.visitRecord visitRecord
+        from hj_resource
+        left join hj_course
+        on hj_resource.courseid=hj_course.courseid
+        left join
+        hj_visitrecord v
+        on hj_resource.resourceId=v.resourceId
+        where 1=1
+        <if test="deptid !=null and deptid!=0">
+            and hj_resource.deptid=#{deptid}
+        </if>
+
+        <if test="belongId!=null and belongId!=0">
+            and hj_resource.belongid=#{belongId}
+        </if>
+    </select>
+    <!--计数资源信息-->
+    <select id="queryResourceCount" resultType="int">
+		select count(*) from hj_resource;
+	</select>
+    <!--添加资源管理信息-->
+    <insert id="addResource" parameterType="resource">
+        insert into hj_resource(userid,deptid,source,address,resourceName,phone,courseid,yunYingNote,tel,weixin,qq)
+        values(
+        #{userid},#{deptid},#{source},#{address},#{resourceName},#{phone},#{courseid},#{yunYingNote},#{tel},#{weixin},#{qq}
+        )
+    </insert>
+    <!--修改资源管理信息-->
+    <update id="updateResource" parameterType="resource">
+        update hj_resource set
+        userid=#{userid},deptid=#{deptid},source=#{source},address=#{address},resourceName=#{resourceName},phone=#{phone},courseid=#{courseid},yunYingNote=#{yunYingNote},tel=#{tel},weixin=#{weixin},qq=#{qq}
+        where resourceId=#{resourceId}
+    </update>
+    <!--删除资源管理信息-->
+    <delete id="deleteResources" parameterType="java.util.List">
+        delete from hj_resource where resourceId in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <!--查询资源管理-->
+    <select id="queryAllCreatePerson"  resultType="user">
+		select userid,username,phone,sex,rolename,deptname,email from  hj_user u left join
+        hj_role r on u.roleid=r.roleid left join hj_dept d on u.deptid=d.deptid
+	</select>
+    <!--查询销售员-->
+    <select id="queryAllXiaoShou"  resultType="user">
+		select username,userid from hj_user
+		where deptid=5
+	</select>
+    <!--分配销售员-->
+    <update id="updateResourceState"  parameterType="java.util.List">
+        update hj_resource set state = 1
+        where resourceId in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+    <!--查询资源管理-->
+    <select id="queryResourceBySceen"  resultType="resource">
+		select r.resourceId,r.userid,r.deptid,c.courseid,r.createrName,r.source,r.create_time,r.createrName,r.address,r.resourceName,r.phone,c.note,r.firstVisitTime,r.yunYingResourceLevel,r.isZhuanyi,r.isolddata
+        from hj_resource r
+        join hj_course c
+        on c.courseid=r.courseid
+        limit #{currentPage},#{pageSize}
+	</select>
+    <!--查询销售部详细信息-->
+    <select id="queryDetailsResource" parameterType="int" resultType="resource">
+       select resourceId,hj_resource.userid,hj_resource.create_time,hj_resource.state,isZhuanyi,createrName,hj_resource.create_time,
+        source,address,resourceName,hj_resource.phone,hj_course.courseName as courseName,hj_user.username belongName,yunYingNote,
+        firstVisitTime,nextVisitTime,assignTime,yunYingNote,hj_resource.email,idCard,tel,weixin,qq,nextVisitTime,xiaoShouNote,resourceLevel
+        from hj_resource
+        left join hj_course
+        on hj_resource.courseid=hj_course.courseid
+        left join hj_user
+        on hj_resource.belongid=hj_user.userid
+        where resourceId=#{resourceId}
+    </select>
+    <!--添加成交信息-->
+    <insert id="addDealrecord" parameterType="dealrecord">
+      insert into hj_dealrecord(dealrecordId,userid,resourceId,studentId,courseid,subjectid,create_time,update_id,					update_time,note,dr,scoretime,score,ispass) values(
+  					null,#{userid},#{resourceId},null,#{courseid},null,
+  					(select create_time from hj_resource where resourceId=#{resourceId}),
+					#{userid},#{update_time},
+					(select xiaoShouNote from hj_resource where resourceId=#{resourceId}),
+					(select dr from hj_resource where resourceId=#{resourceId}),null,null,null
+		);
+    </insert>
+    <!--添加成交信息-->
+    <insert id="addResourceStudent" parameterType="student">
+      insert into hj_student
+      (dealtime,dealprice,isOnlineBuy,ishavenetedu,netedumoney,preferinfo,remituser)
+      values
+      (#{dealtime},#{dealprice},#{isOnlineBuy},#{ishavenetedu},#{netedumoney},#{preferinfo},#{remituser})
+    </insert>
+    <!--添加回访信息-->
+    <insert id="addResourceVisitrecord">
+		insert into hj_visitrecord(userid,resourceId,visitRecord) values (#{userid},#{resourceId},#{visitRecord});
+	</insert>
+    <select id="selectVisitrecord" resultType="visitrecord">
+        select * from hj_visitrecord;
+    </select>
+
+</mapper>

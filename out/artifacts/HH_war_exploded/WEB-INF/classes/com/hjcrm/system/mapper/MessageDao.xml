@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.MessageDao">
+	<!--查询显示消息信息-->
+	<select id="queryMessage" parameterType="com.hjcrm.system.DBHelper.util.PageBean" resultType="message">
+		select systemmessageId,messageContent,messagetitle,issend,send_time
+		FROM hj_systemmessage
+		limit #{currentPage},#{pageSize};
+	</select>
+	<!--计数消息信息-->
+	<select id="queryMessageCount" resultType="int">
+		select count(*) from hj_systemmessage;
+	</select>
+	<!--添加科目信息-->
+	<insert id="addMessage" parameterType="message">
+		insert into hj_systemmessage
+		(messagetitle,messageContent)
+		values(
+		#{messagetitle},#{messageContent}
+		);
+	</insert>
+
+	<!--发布消息信息-->
+	<update id="sendMessage" parameterType="message">
+		update hj_systemmessage set
+		issend=#{issend}
+		where systemmessageId=#{systemmessageId}
+	</update>
+
+</mapper>

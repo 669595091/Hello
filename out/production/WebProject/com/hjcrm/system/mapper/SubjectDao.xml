@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.SubjectDao">
+	<!--查询显示科目信息-->
+	<select id="querySubject" parameterType="com.hjcrm.system.DBHelper.util.PageBean" resultType="subject">
+		select s.subjectid,c.courseName,c.courseid,s.subjectname,s.subjectcode,s.create_id,s.create_time,s.update_id,s.update_time,s.note,s.dr
+		FROM hj_subject s
+		LEFT JOIN hj_course c on s.courseid=c.courseid
+		limit #{currentPage},#{pageSize};
+	</select>
+	<!--计数科目信息-->
+	<select id="querySubjectCount" resultType="int">
+		select count(*) from hj_subject;
+	</select>
+	<!--添加科目信息-->
+	<insert id="addSubject" parameterType="subject">
+		insert into hj_subject
+		(courseid,subjectname,subjectcode,note)
+		values(
+		#{courseid},#{subjectname},#{subjectcode},#{note}
+		);
+	</insert>
+	<!--修改科目信息-->
+	<update id="updateSubject" parameterType="subject">
+		update hj_subject set
+		subjectname=#{subjectname},subjectid=#{subjectid},subjectcode=#{subjectcode},note=#{note}
+		where subjectid=#{subjectid}
+	</update>
+	<!--删除课程-->
+	<delete id="deleteSubject" parameterType="java.util.List">
+		delete from hj_subject where subjectid in
+		<foreach collection="list" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

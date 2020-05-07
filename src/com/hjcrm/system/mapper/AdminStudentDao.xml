@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.AdminStudentDao">
+    <!--学生回退-->
+    <update id="returnStudent" parameterType="java.util.Map">
+        update hj_student set studentstate=8,returnNote=#{returnNote}
+        where studentId in
+        <foreach collection="studentIdList" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+</mapper>

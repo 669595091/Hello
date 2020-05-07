@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="HH:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c9030f8c-4d25-4194-b546-25051d39d4e1" name="Default" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/HH$Test.ic" NAME="Test Coverage Results" MODIFIED="1576060726087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.hjcrm.system.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/HH$myTomcat.ic" NAME="myTomcat Coverage Results" MODIFIED="1575856755167" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>154</find>
+      <find>query</find>
+      <find>queryResourceBySceen</find>
+      <find>dealtime</find>
+      <find>isOnlineBuy</find>
+      <find>ishavenetedu</find>
+      <find>netedumoney</find>
+      <find>preferinfo</find>
+      <find>visitRecordError</find>
+      <find>returnNote</find>
+      <find>Chil</find>
+      <find>ChildMe</find>
+      <find>addResourceVisitreco</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1Xbh7XPGAPs8Sy2FnYB3N1APxPE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/IDEA项目/HH/src/com/hjcrm/system/service/InterMenuService.java" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.hjcrm.system.mapper" />
+      <recent name="com.hjcrm.system.service" />
+      <recent name="com.hjcrm.system.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hjcrm.system.service.impl" />
+      <recent name="com.hjcrm.system.controller.sales" />
+      <recent name="com.hjcrm.system.controller" />
+      <recent name="com.hjcrm.system.mapper" />
+      <recent name="com.hjcrm.system.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IDEA项目\Hello\resources" />
+      <recent name="E:\IDEA项目\HH\src\com\hjcrm\system\mapper" />
+      <recent name="E:\IDEA项目\HH\src\com\hjcrm\system\service" />
+      <recent name="E:\IDEA项目\HH\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.myTomcat">
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hjcrm.system.test.Test" />
+      <module name="WebProject" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hjcrm.system.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="myTomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.31" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="HH:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_HH" />
+        <option name="HTTP_PORT" value="8082" />
+        <option name="JNDI_PORT" value="1098" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="49465" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="HH:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Tomcat Server.myTomcat" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.19640565" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c9030f8c-4d25-4194-b546-25051d39d4e1" name="Default" comment="" />
+      <created>1575381651564</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575381651564</updated>
+      <workItem from="1575381654370" duration="680000" />
+      <workItem from="1575425194205" duration="22814000" />
+      <workItem from="1575510498854" duration="30389000" />
+      <workItem from="1575595630366" duration="11969000" />
+      <workItem from="1575854402068" duration="2170000" />
+      <workItem from="1575856728968" duration="24821000" />
+      <workItem from="1575941374477" duration="35531000" />
+      <workItem from="1576026120747" duration="33584000" />
+      <workItem from="1576113061564" duration="35803000" />
+      <workItem from="1576200437703" duration="32785000" />
+      <workItem from="1576244320374" duration="663000" />
+      <workItem from="1576247860646" duration="4710000" />
+      <workItem from="1576299043614" duration="21409000" />
+      <workItem from="1576388940819" duration="7859000" />
+      <workItem from="1576460047164" duration="5775000" />
+      <workItem from="1576466178609" duration="6294000" />
+      <workItem from="1576484372604" duration="13233000" />
+      <workItem from="1576545636518" duration="6413000" />
+      <workItem from="1576576425999" duration="2113000" />
+      <workItem from="1576754146127" duration="2000" />
+      <workItem from="1576806412431" duration="14783000" />
+      <workItem from="1577093978323" duration="165000" />
+      <workItem from="1581320537932" duration="2118000" />
+      <workItem from="1581391539851" duration="1101000" />
+      <workItem from="1581564611640" duration="13000" />
+      <workItem from="1588735367209" duration="148000" />
+      <workItem from="1588818544818" duration="1737000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="584" y="72" key="#Tomcat_Server" timestamp="1581321065212">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="584" y="72" key="#Tomcat_Server/0.0.1536.834@0.0.1536.834" timestamp="1581321065212" />
+    <state x="447" y="69" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581321068123">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="447" y="69" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1581321068123" />
+    <state x="578" y="13" key="CommitChangelistDialog2" timestamp="1588830685786">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="578" y="13" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1588830685786" />
+    <state x="772" y="154" key="FileChooserDialogImpl" timestamp="1588830607159">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="772" y="154" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1588830607159" />
+    <state width="626" height="209" key="GridCell.Tab.0.bottom" timestamp="1581407641445">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1581407641445" />
+    <state width="626" height="209" key="GridCell.Tab.0.center" timestamp="1581407641445">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1581407641445" />
+    <state width="626" height="209" key="GridCell.Tab.0.left" timestamp="1581407641445">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1581407641445" />
+    <state width="626" height="209" key="GridCell.Tab.0.right" timestamp="1581407641445">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1581407641445" />
+    <state width="626" height="209" key="GridCell.Tab.1.bottom" timestamp="1581407641446">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1581407641446" />
+    <state width="626" height="209" key="GridCell.Tab.1.center" timestamp="1581407641446">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1581407641446" />
+    <state width="626" height="209" key="GridCell.Tab.1.left" timestamp="1581407641446">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1581407641446" />
+    <state width="626" height="209" key="GridCell.Tab.1.right" timestamp="1581407641446">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1581407641446" />
+    <state width="626" height="209" key="GridCell.Tab.2.bottom" timestamp="1581407641446">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1581407641446" />
+    <state width="626" height="209" key="GridCell.Tab.2.center" timestamp="1581407641446">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1581407641446" />
+    <state width="626" height="209" key="GridCell.Tab.2.left" timestamp="1581407641446">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1581407641446" />
+    <state width="626" height="209" key="GridCell.Tab.2.right" timestamp="1581407641446">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="626" height="209" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1581407641446" />
+    <state x="538" y="60" key="SettingsEditor" timestamp="1588824448869">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="538" y="60" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1588824448869" />
+    <state x="776" y="242" key="com.intellij.ide.util.TipDialog" timestamp="1581564612042">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="776" y="242" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1581564612042" />
+    <state x="356" y="28" key="new project wizard" timestamp="1581407177362">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="356" y="28" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1581407177362" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/hjcrm/system/mapper/UserDao.java</url>
+          <line>28</line>
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>HH:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>WebProject</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>lib</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

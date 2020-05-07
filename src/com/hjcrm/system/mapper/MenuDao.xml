@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.MenuDao">
+<!--
+	查询一级菜单下的二级菜单
+	-->
+	<select id="queryMenuByRoleId" parameterType="hashmap" resultType="menu">
+		select DISTINCT(m.menuid),m.menuname,m.menuurl,m.menuimgurl from hj_role r
+		LEFT JOIN hj_role_menu rm on r.roleid = rm.roleid
+		left join hj_menu m on m.menuid = rm.menuid
+
+		<where>
+			<if test="roleid!=null and roleid!=''">
+				and r.roleid=#{roleid}
+			</if>
+			<if test="menuparaid!=null and menuparaid!=''">
+				and m.menuparaid=#{menuparaid}
+			</if>
+		</where>
+	</select>
+<!--
+	查询所有的角色菜单
+	-->
+	<select id="queryAllMenu" parameterType="hashmap" resultType="menu">
+		select DISTINCT(m.menuid),m.menuname,m.menuurl,m.menuimgurl from hj_menu m
+		LEFT JOIN hj_role_menu rm  on m.menuid = rm.menuid
+		left join hj_role r on r.roleid = rm.roleid
+		<where>
+			<if test="menuparaid!=null and menuparaid!=''">
+				and m.menuparaid=#{menuparaid}
+			</if>
+		</where>
+	</select>
+	<!--
+		添加菜单
+	-->
+	<insert id="addMenu" parameterType="menu">
+		insert into hj_menu(menuid,menuparaid,menuname,menucode,menuno,menuurl,menuimgurl,dr,menutype,create_time,update_time,create_id,update_id)
+		values(
+		#{menuid},#{menuparaid},#{menuname},#{menucode},#{menuno},menuurl=#{menuurl},#{menuimgurl},#{dr},#{menutype},#{create_time},#{update_time},#{create_id},#{update_id}
+		)
+	</insert>
+	<!--
+		修改菜单
+	-->
+	<update id="updateMenu" parameterType="menu">
+		update hj_menu set
+		<if test="menuparaid!=null">menuparaid=#{menuparaid},</if> menuno=#{menuno},menuname=#{menuname},menucode=#{menucode},menuurl=#{menuurl}<if test="menuimgurl !=null and menuimgurl !=''">,menuimgurl=#{menuimgurl}</if>
+		where menuid=#{menuid}
+	</update>
+
+
+	<!--判断当前菜单是否有子菜单 -->
+	<select id="hasSecondaryChild" parameterType="int" resultType="menu">
+          select menuid from hj_menu where menuparaid = #{menuid}
+    </select>
+	<!--查看当前菜单是否被角色分配-->
+	<select id="hasRoles" parameterType="int" resultType="role_menu">
+         select menuid from hj_role_menu where menuid=#{menuid}
+    </select>
+	<!--删除菜单-->
+	<delete id="deleteMenuById" parameterType="int">
+        delete from hj_menu where menuid=#{menuid}
+    </delete>
+
+</mapper>

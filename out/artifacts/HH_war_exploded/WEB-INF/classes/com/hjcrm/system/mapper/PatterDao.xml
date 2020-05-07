@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.PatterDao">
+	<!--查询所有话术-->
+	<select id="queryPatter" parameterType="patter" resultType="patter">
+		select patterid,userid,patterTypeId,shortTitle,isshare,note
+		from hj_patter
+		where userid=#{userid}
+	</select>
+	<!--查询所有话术-->
+	<select id="queryPattertype" parameterType="patter" resultType="patter">
+		select patterid,userid,patterTypeId,shortTitle,isshare,note
+		from hj_patter
+		where userid=#{userid}
+	</select>
+	<!--添加话术-->
+	<insert id="addPatter" parameterType="patter">
+		insert into hj_patter(shortTitle,content,userid)
+		values(#{shortTitle},#{content},#{userid});
+	</insert>
+	<!--修改话术-->
+	<update id="updatePatter" parameterType="patter">
+		update hj_patter set shortTitle=#{shortTitle},content=#{content},userid=#{userid}
+		where patterid=#{patterid}
+	</update>
+	<!--删除话术-->
+	<delete id="deletePatter" parameterType="java.util.List">
+		delete from hj_patter where patterid in
+		<foreach collection="list" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+	<!--共享信息-->
+	<update id="updatePatterIsShare" parameterType="patter">
+		update hj_patter set
+		isshare=#{isshare}
+		where patterid=#{patterid}
+	</update>
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hjcrm.system.mapper.CourseDao">
+	<!--查询显示课程信息-->
+	<select id="queryCourse" parameterType="com.hjcrm.system.DBHelper.util.PageBean" resultType="course">
+		select courseid,courseTeacherName,courseName,courseMoney,courseDescribe,note from hj_course
+		limit #{currentPage},#{pageSize};
+	</select>
+	<!--计数课程信息-->
+	<select id="queryCourseCount" resultType="int">
+		select count(*) from hj_course;
+	</select>
+	<!--添加课程信息-->
+	<insert id="addCourse" parameterType="course">
+		insert into hj_course
+		(courseid,courseName,coursecode,courseMoney,courseDescribe,courseTeacherid,courseTeacherName,create_id,create_time,update_id,update_time,note,dr)
+		values(
+		#{courseid},#{courseName},#{coursecode},#{courseMoney},#{courseDescribe},#{courseTeacherid},#{courseTeacherName},#{create_id},#{create_time},#{update_id},#{update_time},#{note},#{dr}
+		);
+	</insert>
+	<!--修改课程信息-->
+	<update id="updateCourse" parameterType="course">
+		update hj_course set
+		courseName=#{courseName},coursecode=#{coursecode},courseMoney=#{courseMoney},courseDescribe=#{courseDescribe},courseTeacherid=#{courseTeacherid},courseTeacherName=#{courseTeacherName},create_id=#{create_id},create_time=#{create_time},update_id=#{update_id},update_time=#{update_time},note=#{note},dr=#{dr}
+		where courseid=#{courseid}
+	</update>
+	<!--删除课程-->
+	<delete id="deleteCourse" parameterType="java.util.List">
+		delete from hj_course where courseid in
+		<foreach collection="list" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+	<select id="queryAllCourseInfo" resultType="course">
+        select * from hj_course;
+    </select>
+
+</mapper>
